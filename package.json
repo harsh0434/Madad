@@ -1,0 +1,22 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "opener http://localhost:5173",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\" \"npm test\"",
+    "start:frontend": "cd client && npm run dev",
+    "start:backend": "cd server && npm start",
+    "preinstall": "concurrently \"npm run in:frontend\" \"npm run in:backend\"",
+    "in:frontend": "cd client && npm i",
+    "in:backend": "cd server && npm i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "opener": "^1.5.2"
+  }
+}
